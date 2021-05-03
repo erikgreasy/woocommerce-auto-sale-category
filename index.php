@@ -62,7 +62,7 @@ function handle_product_to_sale_cat( $post_id ) {
             $sale_price = $_POST['_sale_price'];
             
             // has sale price
-            if( $sale_price >= 0 && ! has_term( $cat_name, 'product_cat', $post_id ) ){
+            if( $sale_price > 0 && ! has_term( $cat_name, 'product_cat', $post_id ) ){
                 wp_set_object_terms($post_id, $cat_name, 'product_cat', true );
             }
             // doesnt have sale price
